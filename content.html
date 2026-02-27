@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Tay Kewei — Content Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --serif:'Playfair Display', ui-serif, Georgia, serif; --sans:'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial; }
+    body{ font-family: var(--sans); }
+    h1,h2,h3,.serif{ font-family: var(--serif); }
+    .grain:before{
+      content:""; position:absolute; inset:0; pointer-events:none; opacity:.12; mix-blend-mode:overlay;
+      background-image:url('assets/grain.png'); background-size:400px 400px;
+    }
+  </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100">
+
+<header class="sticky top-0 z-50 backdrop-blur bg-neutral-950/70 border-b border-white/10">
+  <div class="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
+    <a href="index.html" class="tracking-wide uppercase text-xs text-white/80 hover:text-white">Tay Kewei</a>
+    <nav class="flex gap-6 text-sm text-white/70">
+      <a href="singing.html" class="hover:text-white">Singing</a>
+      <a href="content.html" class="hover:text-white">Content</a>
+      <a href="about.html" class="hover:text-white">About</a>
+      <a href="contact.html" class="hover:text-white">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="max-w-6xl mx-auto px-5 py-14">
+  <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+    <div>
+      <p class="text-xs uppercase tracking-[0.28em] text-white/60">Content Portfolio</p>
+      <h1 class="mt-3 text-4xl md:text-5xl serif">Travel & Lifestyle Campaigns</h1>
+      <p class="mt-4 text-white/70 max-w-2xl">Organized by category for brand-side scanning.</p>
+    </div>
+    <div class="flex flex-wrap gap-2">
+      <button data-filter="All" class="cfilterbtn px-4 py-2 rounded-full text-sm border border-white/15 bg-white/5 hover:border-white/40">All</button>
+      <button data-filter="Travel Destinations" class="cfilterbtn px-4 py-2 rounded-full text-sm border border-white/15 bg-white/5 hover:border-white/40">Destinations</button>
+      <button data-filter="Resorts" class="cfilterbtn px-4 py-2 rounded-full text-sm border border-white/15 bg-white/5 hover:border-white/40">Resorts</button>
+      <button data-filter="Airlines" class="cfilterbtn px-4 py-2 rounded-full text-sm border border-white/15 bg-white/5 hover:border-white/40">Airlines</button>
+      <button data-filter="Lifestyle Campaigns / Ads" class="cfilterbtn px-4 py-2 rounded-full text-sm border border-white/15 bg-white/5 hover:border-white/40">Campaigns</button>
+      <button data-filter="Endorsement / Ambassador" class="cfilterbtn px-4 py-2 rounded-full text-sm border border-white/15 bg-white/5 hover:border-white/40">Ambassador</button>
+    </div>
+  </div>
+
+  <div class="mt-10 rounded-3xl overflow-hidden border border-white/10">
+    <div class="relative h-56 md:h-72">
+      <img src="assets/curated/content_banner.jpg" class="absolute inset-0 w-full h-full object-cover opacity-80" alt="Content"/>
+      <div class="absolute inset-0 bg-gradient-to-b from-neutral-950/20 via-neutral-950/45 to-neutral-950"></div>
+      <div class="absolute bottom-6 left-6 right-6">
+        <div class="text-sm text-white/80">Tip: Put your strongest 6–12 campaigns at the top for best conversion.</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="contentGrid" class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+
+  <div class="mt-14 grid md:grid-cols-2 gap-6">
+    <div class="p-7 rounded-2xl border border-white/10 bg-white/5">
+      <div class="text-xs uppercase tracking-[0.22em] text-white/60">What to add next</div>
+      <ul class="mt-4 space-y-2 text-white/75 text-sm list-disc list-inside">
+        <li>Campaign thumbnails (IG cover / screenshot) for each brand</li>
+        <li>Deliverables + results (views, saves, CTR, bookings, etc.)</li>
+        <li>Destination tags (Taipei, Jeju, Tokyo, Maldives...)</li>
+        <li>Press / media features</li>
+      </ul>
+    </div>
+    <div class="p-7 rounded-2xl border border-white/10 bg-white/5">
+      <div class="text-xs uppercase tracking-[0.22em] text-white/60">Media kit</div>
+      <p class="mt-4 text-white/75 text-sm">Add a “Download Media Kit (PDF)” button here when you’re ready.</p>
+      <div class="mt-6">
+        <a href="contact.html" class="inline-flex px-5 py-3 rounded-full bg-white text-neutral-950 text-sm font-semibold hover:bg-white/90">Enquire for rates</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="data.js"></script>
+
+<script>
+  const data = window.PORTFOLIO_DATA?.content || [];
+  const grid = document.getElementById('contentGrid');
+  let active = 'All';
+
+  function badge(text){
+    return `<span class="inline-flex items-center px-2.5 py-1 rounded-full border border-white/15 bg-white/5 text-xs text-white/70">${text}</span>`;
+  }
+
+  function card(item){
+    const brand = item.brand ? `<div class="text-sm text-white/80 font-medium">${item.brand}</div>` : '';
+    const dest  = item.destination ? badge(item.destination) : '';
+    const deliv = item.deliverables ? badge(item.deliverables) : '';
+    return `
+      <a href="${item.url}" target="_blank" rel="noopener"
+         class="group block rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition overflow-hidden">
+        <div class="p-5">
+          <div class="flex items-start justify-between gap-3">
+            <div class="text-xs uppercase tracking-[0.22em] text-white/60">${item.category || 'Campaign'}</div>
+            <div class="text-xs text-white/50">↗</div>
+          </div>
+          <div class="mt-3 serif text-lg leading-snug">${item.title}</div>
+          <div class="mt-4">${brand}</div>
+          <div class="mt-4 flex flex-wrap gap-2">${dest}${deliv}</div>
+        </div>
+        <div class="h-px bg-white/10"></div>
+        <div class="px-5 py-4 text-xs text-white/50">Click to view</div>
+      </a>`;
+  }
+
+  function render(){
+    const items = active === 'All' ? data : data.filter(d => (d.category||'') === active);
+    grid.innerHTML = items.map(card).join('');
+    document.querySelectorAll('.cfilterbtn').forEach(b=>{
+      const isActive = b.dataset.filter===active;
+      b.classList.toggle('border-white/50', isActive);
+      b.classList.toggle('bg-white/10', isActive);
+    });
+  }
+
+  document.querySelectorAll('.cfilterbtn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      active = btn.dataset.filter;
+      render();
+    });
+  });
+
+  render();
+</script>
+
+
+<footer class="border-t border-white/10 mt-16">
+  <div class="max-w-6xl mx-auto px-5 py-10 text-sm text-white/60 flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
+    <div>© <span id="y"></span> Tay Kewei. All rights reserved.</div>
+    <div class="flex gap-5">
+      <a class="hover:text-white" href="https://instagram.com/keweitay" target="_blank" rel="noopener">Instagram</a>
+      <a class="hover:text-white" href="https://facebook.com/keweitay" target="_blank" rel="noopener">Facebook</a>
+      <a class="hover:text-white" href="https://www.youtube.com/@kiwitay" target="_blank" rel="noopener">YouTube</a>
+    </div>
+  </div>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</footer>
+</body></html>

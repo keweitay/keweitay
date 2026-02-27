@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Tay Kewei — Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --serif:'Playfair Display', ui-serif, Georgia, serif; --sans:'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial; }
+    body{ font-family: var(--sans); }
+    h1,h2,h3,.serif{ font-family: var(--serif); }
+    .grain:before{
+      content:""; position:absolute; inset:0; pointer-events:none; opacity:.12; mix-blend-mode:overlay;
+      background-image:url('assets/grain.png'); background-size:400px 400px;
+    }
+  </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100">
+
+<header class="sticky top-0 z-50 backdrop-blur bg-neutral-950/70 border-b border-white/10">
+  <div class="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
+    <a href="index.html" class="tracking-wide uppercase text-xs text-white/80 hover:text-white">Tay Kewei</a>
+    <nav class="flex gap-6 text-sm text-white/70">
+      <a href="singing.html" class="hover:text-white">Singing</a>
+      <a href="content.html" class="hover:text-white">Content</a>
+      <a href="about.html" class="hover:text-white">About</a>
+      <a href="contact.html" class="hover:text-white">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="relative overflow-hidden">
+  <section class="relative">
+    <div class="absolute inset-0">
+      <img src="assets/curated/hero.jpg" alt="Tay Kewei" class="w-full h-full object-cover opacity-70"/>
+      <div class="absolute inset-0 bg-gradient-to-b from-neutral-950/20 via-neutral-950/65 to-neutral-950"></div>
+    </div>
+    <div class="relative max-w-6xl mx-auto px-5 py-20 md:py-28">
+      <div class="max-w-2xl">
+        <p class="text-xs tracking-[0.28em] uppercase text-white/70">Singer-songwriter • Family Travel & Lifestyle Creator</p>
+        <h1 class="mt-5 text-4xl md:text-6xl leading-[1.05] serif">A luxury editorial portfolio—built for brands, tourism boards, and event producers.</h1>
+        <p class="mt-6 text-lg text-white/75 leading-relaxed">
+          One home for performance highlights, TV exposure, music videos, and campaign work—organized, clickable, and client-ready.
+        </p>
+        <div class="mt-10 flex flex-wrap gap-3">
+          <a href="singing.html" class="px-5 py-3 rounded-full bg-white text-neutral-950 text-sm font-semibold hover:bg-white/90">View Singing Portfolio</a>
+          <a href="content.html" class="px-5 py-3 rounded-full border border-white/20 text-sm font-semibold hover:border-white/50">View Content Portfolio</a>
+          <a href="contact.html" class="px-5 py-3 rounded-full border border-white/20 text-sm font-semibold hover:border-white/50">Enquire / Book</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-5 py-14">
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="p-6 rounded-2xl border border-white/10 bg-white/5">
+        <div class="text-xs uppercase tracking-[0.22em] text-white/60">Singing</div>
+        <div class="mt-3 text-2xl serif">Live • TV • Music Videos • Genres</div>
+        <p class="mt-3 text-white/70">Curated links, fast browsing, and a clean “book me” path.</p>
+        <a href="singing.html" class="inline-flex mt-6 text-sm font-semibold text-white hover:underline">Explore →</a>
+      </div>
+      <div class="p-6 rounded-2xl border border-white/10 bg-white/5">
+        <div class="text-xs uppercase tracking-[0.22em] text-white/60">Content Creation</div>
+        <div class="mt-3 text-2xl serif">Travel • Resorts • Airlines • Campaigns</div>
+        <p class="mt-3 text-white/70">Organized by destination and brand category for quick client scanning.</p>
+        <a href="content.html" class="inline-flex mt-6 text-sm font-semibold text-white hover:underline">Explore →</a>
+      </div>
+      <div class="p-6 rounded-2xl border border-white/10 bg-white/5">
+        <div class="text-xs uppercase tracking-[0.22em] text-white/60">Pitch Ready</div>
+        <div class="mt-3 text-2xl serif">Designed to convert</div>
+        <p class="mt-3 text-white/70">Luxury editorial vibe, mobile-first, with frictionless clickable links.</p>
+        <a href="contact.html" class="inline-flex mt-6 text-sm font-semibold text-white hover:underline">Contact →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-5 pb-6">
+    <div class="rounded-3xl overflow-hidden border border-white/10 bg-white/5">
+      <div class="grid md:grid-cols-2">
+        <div class="p-10">
+          <div class="text-xs uppercase tracking-[0.22em] text-white/60">Quick intro</div>
+          <h2 class="mt-4 text-3xl md:text-4xl serif leading-tight">Tay Kewei</h2>
+          <p class="mt-5 text-white/75 leading-relaxed">
+            Singer-songwriter and Singapore-based family travel & lifestyle content creator—mother of three boys.
+            This site is built from your EPK and can be expanded with new campaigns anytime.
+          </p>
+          <div class="mt-8 flex gap-3">
+            <a href="about.html" class="px-5 py-3 rounded-full bg-white text-neutral-950 text-sm font-semibold hover:bg-white/90">Read more</a>
+            <a href="content.html" class="px-5 py-3 rounded-full border border-white/20 text-sm font-semibold hover:border-white/50">See brand work</a>
+          </div>
+        </div>
+        <div class="relative min-h-[320px]">
+          <img src="assets/curated/about.jpg" class="absolute inset-0 w-full h-full object-cover opacity-90" alt="Portrait"/>
+          <div class="absolute inset-0 bg-gradient-to-tr from-neutral-950/40 via-neutral-950/10 to-neutral-950/60"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="data.js"></script>
+
+
+<footer class="border-t border-white/10 mt-16">
+  <div class="max-w-6xl mx-auto px-5 py-10 text-sm text-white/60 flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
+    <div>© <span id="y"></span> Tay Kewei. All rights reserved.</div>
+    <div class="flex gap-5">
+      <a class="hover:text-white" href="https://instagram.com/keweitay" target="_blank" rel="noopener">Instagram</a>
+      <a class="hover:text-white" href="https://facebook.com/keweitay" target="_blank" rel="noopener">Facebook</a>
+      <a class="hover:text-white" href="https://www.youtube.com/@kiwitay" target="_blank" rel="noopener">YouTube</a>
+    </div>
+  </div>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</footer>
+</body></html>
